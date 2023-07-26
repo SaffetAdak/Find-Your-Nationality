@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Nationality!</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div>
+        <h1>Find your nationality</h1>
+        <form action="/" method="post">
+            <input type="text" name="name" id="name-input">
+            <button type="submit">Find!</button>
+        </form>
+    </div>
+    <div>
+        <%= name %>
+        <% if (country && country.length > 0) { %>
+            <h2>Country:</h2>
+                <% for (let i = 0; i < country.length; i++) { %>
+                    <p><%= "Country Code: " + country[i].country_id + " Probability: " +  country[i].probability %></p>
+                <% } %>
+        <% } else { %>
+            <p>No country found for this name.</p>
+        <% } %>
+    </div>
+</body>
+</html>
